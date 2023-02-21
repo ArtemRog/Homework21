@@ -9,7 +9,7 @@ public:
 	Book(string n, string a, int years, string rezyme);
 	void setRezyme(string r);
 	string getRezyme()const;
-	void show()const;
+	void show()const override;
 
 };
 
