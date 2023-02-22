@@ -2,6 +2,7 @@
 #include"Publication.h"
 #include"Magazine.h"
 #include"Book.h"
+#include"PublicationException.h"
 class Library
 {
 protected:

@@ -34,6 +34,10 @@ void Library::showList() const
 
 void Library::addLib(Publication* obj)
 {
+    if (obj->getAuthor() == "" || obj->getName() == "")
+    {
+        throw BookException(obj->getAuthor());
+    }
     arr.push_back(obj);
 }
 
