@@ -34,11 +34,18 @@ void Library::showList() const
 
 void Library::addLib(Publication* obj)
 {
-    if (obj->getAuthor() == "" || obj->getName() == "")
+    if (obj->getAuthor() == "")
+        throw new BookException(obj->getAuthor());
+    else if (obj->getName() == "")
+        throw new BookException(obj->getName());
+    if (obj->getYears() <= 0)
     {
-        throw BookException(obj->getAuthor());
+        string s = std::to_string(obj->getYears());
+        throw new EditionYearException(s);
     }
-    arr.push_back(obj);
+    
+    else 
+        arr.push_back(obj);
 }
 
 void Library::dell(int index)

@@ -10,27 +10,27 @@ Publication::Publication()
 Publication::Publication(string n, string a, int years)
 {
     if (a == "")
-        throw BookException(a);
+        throw  new BookException(a);
     else if (n == "")
-        throw BookException(n);
+        throw  new BookException(n);
     else if (years <= 0)
     {
         string s=std::to_string(years);
-        throw EditionYearException(s);
+        throw  new EditionYearException(s);
     }
-    else
-    {
-        name = n;
-        author = a;
-        this->years = years;
-    }
+    else {
+    name = n;
+    author = a;
+    this->years = years;
+}
+    
     
 }
 
 void Publication::setName(string n)
 {
     if (n == "")
-        throw BookException(n);
+        throw new BookException(n);
     else
         name = n;
 }
@@ -38,7 +38,7 @@ void Publication::setName(string n)
 void Publication::setAuthor(string a)
 {
     if (a == "")
-        throw BookException(a);
+        throw new BookException(a);
     else 
         author = a;
 }
@@ -48,7 +48,7 @@ void Publication::setYears(int years)
     if (years <= 0)
     {
     string s = std::to_string(years);
-    throw EditionYearException(s);
+    throw new EditionYearException(s);
     }
    else
     this->years = years;
